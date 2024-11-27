@@ -16,8 +16,9 @@ class Prefeito extends Model
         return $uniquePrefeitos;
     }
 
-    public function cidade()
+    public function cidades()
     {
-        return $this->belongsTo(related: Cidade::class); // fala que o prefeito pertence a uma cidade
+        return $this->belongsToMany(Cidade::class, 'prefeito_cidade')->withPivot('quantidade');
     }
+    
 }
