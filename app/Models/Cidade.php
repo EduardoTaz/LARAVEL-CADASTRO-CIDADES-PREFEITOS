@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cidade extends Model
 {
-    public function prefeito()
+    public function prefeitos()
     {
-        return $this->hasOne(Prefeito::class);
+        return $this->belongsToMany(Prefeito::class, 'prefeito_cidade')->withPivot('quantidade');
     }
+    
+    
 }
