@@ -16,13 +16,13 @@ body {
     border-radius: 8px;
     padding: 20px 30px;
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     box-sizing: border-box;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
     text-align: center;
@@ -30,7 +30,7 @@ h1 {
     letter-spacing: 0.5px;
 }
 
-.no-products {
+.no-data {
     font-size: 1.2rem;
     color: #555;
     text-align: center;
@@ -50,9 +50,10 @@ thead {
 
 th, td {
     padding: 12px 15px;
-    text-align: left;
     border-bottom: 1px solid #ddd;
     font-size: 0.95rem;
+    word-wrap: break-word; 
+    text-align: center;
 }
 
 th {

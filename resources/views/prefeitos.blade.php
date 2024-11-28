@@ -26,6 +26,7 @@
             <th>Partido</th>
             <th>Mandato de Início</th>
             <th>Fim de Mandato</th>
+            <th>Ações</th> 
           </tr>
         </thead>
 
@@ -38,6 +39,13 @@
                 <td>{{ $prefeito->partido }}</td>
                 <td>{{ $prefeito->mandato_inicio }}</td>
                 <td>{{ $prefeito->mandato_fim }}</td>
+                <td>
+                  <form method="POST" action="/deletar_prefeito/{{$prefeito->id}}">
+                    @csrf
+                    {{ method_field("DELETE") }}
+                    <input type="submit" value="Deletar prefeito">
+                  </form>
+                </td>
               </tr>
           @endforeach
         </tbody>

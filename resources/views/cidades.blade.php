@@ -25,6 +25,7 @@
             <th>Estado</th>
             <th>População</th>
             <th>Data de Fundação</th>
+            <th>Ações</th> 
           </tr>
         </thead>
 
@@ -35,6 +36,13 @@
               <td>{{$cidade->estado}}</td>
               <td>{{$cidade->populacao}}</td>
               <td>{{$cidade->data_fundacao}}</td>
+              <td>
+                <form method="POST" action="/deletar_cidade/{{$cidade->id}}">
+                  @csrf
+                  {{ method_field("DELETE") }}
+                  <input type="submit" value="Deletar cidade">
+                </form>
+              </td>
             </tr>
           @endforeach
         </tbody>

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('prefeito_id')->references('id')->on('prefeitos');
             $table->unsignedBigInteger('cidade_id');
             $table->foreign('cidade_id')->references('id')->on('cidades');
-            $table->integer("quantidade");
+            $table->date("data_fundacao");
             $table->timestamps();
         });
     }

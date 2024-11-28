@@ -11,16 +11,16 @@ class PrefeitoCidade extends Model
 
     protected $table = 'prefeito_cidade';
 
-    // Permite atribuições em massa
-    protected $fillable = ['prefeito_id', 'cidade_id', 'quantidade'];
+    protected $fillable = ['prefeito_id', 'cidade_id', 'data_fundacao'];
 
-    // Relacionamento com Prefeito
+
+
+    // Relaconametos
     public function prefeito()
     {
         return $this->belongsTo(Prefeito::class);
     }
 
-    // Relacionamento com Cidade
     public function cidade()
     {
         return $this->belongsTo(Cidade::class);

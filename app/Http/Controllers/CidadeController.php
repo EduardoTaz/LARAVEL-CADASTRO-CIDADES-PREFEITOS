@@ -27,4 +27,14 @@ class CidadeController extends Controller
     public function formCriarCidade() {
         return view("cadastro_cidades");
     }
+
+    public function deletar($id)
+    {
+        $cidade = new Cidade; 
+        \DB::table('prefeito_cidade')->where('cidade_id', $id)->delete();
+        
+        $cidade -> find($id) -> delete(); // deleta o cadastro
+
+        return redirect('/listar_cidades');
+    }
 }
