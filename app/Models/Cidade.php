@@ -8,7 +8,7 @@ class Cidade extends Model
 {
     public function prefeitos()
     {
-        return $this->belongsToMany(Prefeito::class, 'prefeito_cidade')->withPivot('quantidade');
+        return $this->belongsToMany(Prefeito::class, 'prefeito_cidade')->withPivot('partido');
     }
     
     

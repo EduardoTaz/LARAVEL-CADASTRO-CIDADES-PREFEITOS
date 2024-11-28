@@ -67,6 +67,22 @@ tbody tr:hover {
 tbody tr:last-child td {
     border-bottom: none;
 }
+
+input[type="submit"] {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #c0392b;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 15px 20px;

@@ -18,6 +18,10 @@
             <i class="fas fa-user-tie icon"></i>
             Cadastro de Prefeitos
         </a>
+        <a href="cadastro_prefeitoCidade">
+            <i class="fas fa-user icon"></i><i class="fas fa-city icon"></i>
+            Cadastro de Prefeitos Cidade
+        </a>
     </div>
 </body>
 </html>

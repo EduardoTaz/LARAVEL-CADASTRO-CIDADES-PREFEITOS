@@ -13,7 +13,7 @@ return new class extends Migration
             $table->id();
             $table->string("cidade");
             $table->string("estado");
-            $table->float("populacao");
+            $table->string("populacao");
             $table->date("data_fundacao");
             $table->timestamps();
         });

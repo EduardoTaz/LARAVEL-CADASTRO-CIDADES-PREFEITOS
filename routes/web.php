@@ -13,6 +13,8 @@ Route::get('/listar_cidades', [CidadeController::class, 'listar']);
 
 Route::post('/criar_cidades', [CidadeController::class, 'criar']);
 
+Route::delete('/deletar_cidade/{id}', [CidadeController::class, 'deletar']);
+
 
 //PREFEITOS
 Route::get('/cadastro_prefeitos', [PrefeitoController::class, "formCriarPrefeito"]);
@@ -20,6 +22,9 @@ Route::get('/cadastro_prefeitos', [PrefeitoController::class, "formCriarPrefeito
 Route::get('/listar_prefeitos', [PrefeitoController::class, 'listar']);
 
 Route::post('/criar_prefeitos', [PrefeitoController::class, 'criar']);
+
+Route::delete('/deletar_prefeito/{id}', [PrefeitoController::class, 'deletar']);
+
 
 
 //ATRIBUIR UM PREFEITO Á CIDADE
@@ -29,6 +34,7 @@ Route::get('/listar_prefeitoCidade', [PrefeitoCidadeController::class, 'listar']
 
 Route::post('/criar_prefeitoCidade', [PrefeitoCidadeController::class, 'cadastrar']);
 
+Route::delete('/deletar_prefeitoCidade/{id}', [PrefeitoCidadeController::class, 'deletar']);
 
 
 //TELA INCIIAL

@@ -9,37 +9,32 @@ use App\Models\PrefeitoCidade;
 
 class PrefeitoCidadeController extends Controller
 {
-
     public function listar()
     {
-        $relacoes = PrefeitoCidade::with('cidade', 'prefeito')->get();
-    
+        $relacoes = PrefeitoCidade::with('cidade', 'prefeito')->get(); // recebe as tabelas cidade e prefito
         return view('listar_prefeitoCidade', compact('relacoes'));
     }
-    
-    
 
     public function cadastrar(Request $request)
     {
-        $prefeitoId = $request->prefeito_id;
         $cidadeId = $request->cidade_id;
-    
-        // Verificar se já existe relação
-        $exists = PrefeitoCidade::where('prefeito_id', $prefeitoId)
-                                ->where('cidade_id', $cidadeId)
-                                ->exists();
-    
-        if (!$exists) {
-            PrefeitoCidade::create([
-                'prefeito_id' => $prefeitoId,
-                'cidade_id' => $cidadeId,
-                'quantidade' => 1, // ou outro valor
-            ]);
+
+        $jaTemPrefeito = PrefeitoCidade::where('cidade_id', $cidadeId)->exists();
+
+        if ($jaTemPrefeito) {
+            return redirect('/cadastro_prefeitoCidade')->with('error', 'Esta cidade já possui um prefeito eleito.');
+
         }
-    
+
+        PrefeitoCidade::create([
+            'prefeito_id' => $request->prefeito_id,
+            'cidade_id' => $cidadeId,
+            'data_fundacao' => $request->data_fundacao ?? now(), // ?? - operador php que verifica a operação se a data for nula ela será preenchida com a data atual
+        ]);
+
         return redirect('/listar_prefeitoCidade');
     }
-    
+
     public function formCadastrarPrefeitoCidade()
     {
         $prefeitos = Prefeito::all();
@@ -48,6 +43,12 @@ class PrefeitoCidadeController extends Controller
         return view('cadastro_prefeitoCidade', compact('prefeitos', 'cidades'));
     }
 
+    public function deletar($id)
+    {
+        $prefeitoCidade = new PrefeitoCidade; 
+        
+        $prefeitoCidade -> find($id) -> delete();
 
-
+        return redirect('/listar_prefeitoCidade');
+    }
 }

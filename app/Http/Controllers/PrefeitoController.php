@@ -28,14 +28,15 @@ class PrefeitoController extends Controller
         return view("cadastro_prefeitos");
     }
 
-    public function repetir()
+    public function deletar($id)
     {
-        // Chama a função repeticaoPrefeito() para obter os prefeitos únicos
-        $prefeitos = (new Prefeito)->repeticaoPrefeito();
+        $prefeito = new Prefeito; 
+        \DB::table('prefeito_cidade')->where('prefeito_id', $id)->delete();
+        
+        $prefeito -> find($id) -> delete(); // deleta o cadastro
 
-        // Retorna a view com os dados
-        return view('prefeitos.repetir', compact('prefeitos'));
+        return redirect('/listar_prefeitos');
     }
-    
+
 }
 
