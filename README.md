@@ -1,66 +1,88 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# O que é um framework ?
 
-## About Laravel
+Framework é um conjunto de bibliotecas, que abordam funcionalidades, e estruturas, para o desenvolvimento de aplicações, a fim de fornecer soluções para um mesmo domínio de problema, permitindo a reutilização do seu código. Assim, através das diversas linguagens de programação, os Frameworks são criados e identificados pelas metodologias, propósitos, e implementações, aos quais os diversos tipos de aplicações, na maioria orientadas a objetos, poderão reutilizar suas estruturas e códigos.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Um Framework é formado por um conjunto classes implementadas em uma determinada linguagem de programação, que fornece recursos comuns já prontos, validados e testados, os quais podem ser usados para auxiliar o desenvolvimento de software, viabilizando maior eficiência na resolução dos problemas, otimização de recursos, e detecção de erros. Ele fornece um modelo de dados, usados para resolver um problema específico, abstraindo parte do código das soluções que estamos tratando.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Na programação orientada a objetos, especificamente, um Framework é um conjunto de classes e interfaces, com objetivo da reutilização de arquitetura de software, é composto por objetos, pelos mapeamentos das suas responsabilidades, que através de interfaces, com um fluxo de controle definido, possibilitará a interação com aplicações, ou seja é ele quem irá guiar à solução de um domínio específico.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Comandos Laravel
 
-## Learning Laravel
+## composer install
+  Instalar dependencias após clonar projeto
+## composer create-project laravel/laravel NOME_DO_PROJETO
+  Criar projeto laravel
+##  php artisan serve
+  Iniciar servidor 
+## php artisan make:model Flight
+  Criar model
+##  php artisan make:controller NameController
+  Criar controller
+##  php artisan make:migration create_flights_table
+  Criar arquivo de migration
+## php artisan migrate
+  Criar tabelas no banco
+## php artisan migrate:status
+  Checar status das migrações
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+# Pontos mais importantes do Laravel
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## O que são rotas ?
+quando digitamos www.testserver.com.br/users, é retornada uma página HTML com os users.
 
-## Laravel Sponsors
+A primeira parte de nossa URL, www.testserver.com.br, define uma máquina única na internet que vai responder a requisição do navegador, retornando uma página HTML. Quem retorna esta página HTML é um software que executa nesta máquina chamado servidor Web, ou web server. Qual página vai ser retornada depende justamente da segunda parte da URL, no caso, users.
+## routes->web.php
+Aqui ficará todas as rotas nossas. Por exemplo:
+Queremos que ao usuario acessar /users na url do navegador nos mostremos 
+os usuários do banco para ele
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Rotas POST e GET
+Na verdade temos mais tipos de rotas porém neste momento é importante sabermos de 2, POST e GET. De modo bem simples:
+POST -> Salvar algo no banco
+GET  -> Retornar alguma página
 
-### Premium Partners
+# Estrutura do laravel
+Ele usa o MVC. Model, View e Controller
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Model -> /app/Models
+Controller -> /app/Http/Controllers
+View ->  resources/views
 
-## Contributing
+Sempre que requisitar uma rota ele vai chamar um controller, esse controller sempre vai retornar uma view no fim, podendo interagir com models antes de mexer na view
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+# Git 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Clonando repositório do professor
+git clone url_repositório
 
-## Security Vulnerabilities
+execute o comando ```git remote -v```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+origin  https://github.com/rafaeljordaojardim/project-laravel-aula.git (fetch)
+origin  https://github.com/rafaeljordaojardim/project-laravel-aula.git (push)
 
-## License
+Ele irá retornar algo parecido com as linhas de cima, isso significa que o "remoto" (origin) está apontado para meu repositório, se quiserem subir no seus, terão que mudar essa "origin" (remoto).
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Como mudar o remoto (origin) no meu repo na minha máquina
+
+git remote set-url origin https://gitlab.com/alunorepo/repo-name.git
+essa url acima você irá pegar do seu repositório que criou
+
+git add . -> adicionar arquivos pro commit
+git commit -m "mensagem" -> criar mensagem pro pacote 
+git push origin main -> mandar pro github
+git pull origin main
+
+Não se esqueça do token que aprendemos a criar para logar no github
+
+podemos tambem setar a url da seguinte maneira no qual não precisaremos mais colocar password
+
+git remote set-url origin https://seu_token_aqui@gitlab.com/alunorepo/repo-name.git
+
+
+Caso queira criar uma nova origin
+
+git remote add new_origin_name [repo-url]
+
